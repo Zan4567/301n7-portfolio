@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  height: 100%;
+}
+
+nav {
+  flex-grow: 0;
+  min-width: 10%;
+  background-color: #DDD;
+  padding-left: 1em;
+}
+
+main {
+  flex-grow: 1;
+  margin: 0 1.2em;
+}
+
+.items {
+  flex-grow: 0;
+  min-width: 8%;
+  background-color: #EEE;
+  padding-left: 1em;
+}
+
+header {
+  font-family: sans-serif;
+  text-align: center;
+}
