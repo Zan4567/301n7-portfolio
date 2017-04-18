@@ -46,6 +46,19 @@ header {
   margin-left: 0;
 }
 
+.template {
+  display: none;
+}
+
+article {
+  position: relative;
+  margin: .5em;
+  border-width: thin;
+  border-style: double;
+  padding: 1em;
+  background-color: #1DC;
+}
+
 header {
   font-family: sans-serif;
   text-align: center;

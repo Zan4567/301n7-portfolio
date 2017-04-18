@@ -1,0 +1,13 @@
+.description {
+  opacity: 0.4;
+  margin: .5em;
+  font-size: 14pt;
+  font-family: sans-serif;
+}
+
+.close {
+  font-family: sans-serif;
+  position: absolute;
+  top: 0;
+  right: .2em;
+}

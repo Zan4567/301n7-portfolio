@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/module.css">
-
-    <script>
-      // <article data-category="cat">
-      //   <h2>Title</h2>
-      //   <p class="description">text</p>
-      //   <p class="body">text</p>
-      // </article>
-    </script>
   </head>
   <body>
     <nav>
@@ -31,7 +23,14 @@
         <h1>Header</h1>
 
       </header>
-
+      <div id="articleSpace">
+        <article class="template" data-category="cat">
+          <h2>Title</h2>
+          <p class="description">text</p>
+          <p class="body">text</p>
+          <h6 class="close">x</h6>
+        </article>
+      </div>
     </main>
     <div class="items">
       <ul>
@@ -39,11 +38,18 @@
         <li>item 2</li>
       </ul>
     </div>
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous">
+    </script>
     <script type="text/javascript" src="/js/articles.js"></script>
     <script type="text/javascript" src="/js/project.js"></script>
 
-    </script>
-
+    <script>
+      articleList.loadArticles();
     </script>
   </body>
 </html>

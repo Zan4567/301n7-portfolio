@@ -1,6 +1,6 @@
 'use strict'
 
-var articles = [
+var articleData = [
   // {
   //   name:'template',
   //   category:'',
