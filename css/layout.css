@@ -34,19 +34,53 @@ header {
 
 .items {
   flex-grow: 0;
-  min-width: 8%;
+  min-width: 12%;
   background-color: #EEE;
   padding-left: 1em;
 }
 
 .items li {
-  border-style: solid;
+  margin-top: .3em;
+}
+
+.template {
+  display: none;
+}
+
+article {
+  position: relative;
+  margin: .5em;
   border-width: thin;
-  margin: 0.6em;
-  margin-left: 0;
+  border-style: double;
+  padding: 1em;
+  background-color: #1DC;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: .2em;
 }
 
 header {
   font-family: sans-serif;
   text-align: center;
+  position: relative;
+}
+
+.navButton {
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 20%;
+}
+
+@media screen and (min-width: 700px) {
+  .hiddenMenu {
+    display: block;
+  }
+
+  .navButton {
+    display: none;
+  }
 }

@@ -7,19 +7,10 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/module.css">
-
-    <script>
-      // <article data-category="cat">
-      //   <h2>Title</h2>
-      //   <p class="description">text</p>
-      //   <p class="body">text</p>
-      // </article>
-    </script>
   </head>
   <body>
-    <nav>
-      <button type="button" id="toggleDisplay" class="navbutton"></button>
-      <ul id="navMenu" class="hiddenMenu">
+    <nav id="navMenu" class="hiddenMenu">
+      <ul>
         <li>item 1</li>
         <li>item 2</li>
         <li>item 3</li>
@@ -29,21 +20,34 @@
     <main>
       <header>
         <h1>Header</h1>
-
+        <button type="button" id="toggleDisplay" class="navButton lightButton"></button>
       </header>
-
+      <div id="articleSpace">
+        <article class="template" data-category="cat">
+          <h2>Title</h2>
+          <p class="description">text</p>
+          <p class="body">text</p>
+          <button class="close lightButton">x</button>
+        </article>
+      </div>
     </main>
     <div class="items">
-      <ul>
-        <li>item 1</li>
-        <li>item 2</li>
+      <ul id="toc">
+
       </ul>
     </div>
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous">
+    </script>
     <script type="text/javascript" src="/js/articles.js"></script>
     <script type="text/javascript" src="/js/project.js"></script>
 
-    </script>
-
+    <script>
+      articleList.loadArticles();
     </script>
   </body>
 </html>
