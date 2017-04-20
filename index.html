@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="css/module.css">
   </head>
   <body>
-    <nav>
-      <button type="button" id="toggleDisplay" class="navbutton"></button>
-      <ul id="navMenu" class="hiddenMenu">
+    <nav id="navMenu" class="hiddenMenu">
+      <ul>
         <li>item 1</li>
         <li>item 2</li>
         <li>item 3</li>
@@ -21,21 +20,20 @@
     <main>
       <header>
         <h1>Header</h1>
-
+        <button type="button" id="toggleDisplay" class="navButton lightButton"></button>
       </header>
       <div id="articleSpace">
         <article class="template" data-category="cat">
           <h2>Title</h2>
           <p class="description">text</p>
           <p class="body">text</p>
-          <h6 class="close">x</h6>
+          <button class="close lightButton">x</button>
         </article>
       </div>
     </main>
     <div class="items">
-      <ul>
-        <li>item 1</li>
-        <li>item 2</li>
+      <ul id="toc">
+
       </ul>
     </div>
 

@@ -5,9 +5,13 @@
   font-family: sans-serif;
 }
 
-.close {
+.lightButton {
+  background-color: inherit;
+  padding: 0 .2em;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
   font-family: sans-serif;
-  position: absolute;
-  top: 0;
-  right: .2em;
+  overflow: visible;
+  white-space: nowrap;
 }

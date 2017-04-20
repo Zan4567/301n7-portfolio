@@ -4,11 +4,13 @@ var articleList = {
   array: [],
   loadArticles: function() {
     var $articleSpace = $('#articleSpace');
+    var $contents = $('#toc');
     articleData.forEach(function(data) {
       articleList.array.push(new Article(data));
     });
     this.array.forEach(function(art) {
       console.log(art);
+      $contents.append('<li><button class="lightButton">' + art.name + '</button></li>');
       $articleSpace.append(art.toHtml());
     });
     console.log();
@@ -35,9 +37,9 @@ Article.prototype.display = function () {
 Article.prototype.toHtml = function() {
   var $newArticle = $('article.template').clone();
 
-
   $newArticle.removeClass('template');
   $newArticle.find('article').attr('data-category', this.category);
+  $newArticle.find('article').attr('data-name', this.name);
   $newArticle.find('h2').html(this.name);
   $newArticle.find('.description').html(this.description);
   $newArticle.find('.body').html(this.body);

@@ -22,7 +22,7 @@ var articleData = [
     category:'info',
     image:'',
     description:'',
-    body:'<p>My name is Kevin Robinson. I live on the Eastside in Bellevue. I volunteer at the Seattle Humane Society and sometimes take care of foster cats.</p>'
+    body:'<p>My name is Kevin Robinson. I live on the Eastside in Bellevue. I volunteer at the Seattle Humane Society and sometimes take care of foster cats.</p> <ul><li><a href="https://github.com/Zan4567">Github</a></li><li><a href="https://www.linkedin.com/in/kevin-robinson-13896011b/">LinkedIn</a></li></ul>'
   },
 
   {
