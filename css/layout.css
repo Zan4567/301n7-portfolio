@@ -17,7 +17,7 @@ nav li {
   margin: 0.2em;
 }
 
-.hiddenMenu {
+.hidden, .hiddenMenu {
   display: none;
 }
 
@@ -35,8 +35,11 @@ header {
 .items {
   flex-grow: 0;
   min-width: 12%;
-  background-color: #EEE;
   padding-left: 1em;
+}
+
+.rightMenu {
+  background-color: #EEE;
 }
 
 .items li {
