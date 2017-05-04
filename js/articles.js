@@ -14,7 +14,7 @@ var articleData = [
     category:'home',
     image:'',
     description:'An introduction to the site',
-    body:'<p>Welcome to my portfolio! My name is Kevin Robinson, and I am a programmer currently studying at Code Fellows.</p>'
+    body:'<p>Welcome to my portfolio! My name is Kevin Robinson, and I am a programmer currently studying at Code Fellows in Seattle.</p>'
   },
 
   {
@@ -22,7 +22,7 @@ var articleData = [
     category:'about me',
     image:'',
     description:'',
-    body:'<p>My name is Kevin Robinson. I live on the Eastside in Bellevue. I volunteer at the Seattle Humane Society and sometimes take care of foster cats.</p> <ul><li><a href="https://github.com/Zan4567">Github</a></li><li><a href="https://www.linkedin.com/in/kevin-robinson-13896011b/">LinkedIn</a></li></ul>'
+    body:'<p>My name is Kevin Robinson. I live in Bellevue, Washington. I volunteer at the Seattle Humane Society and sometimes take care of foster cats.</p> <ul><li><a href="https://github.com/Zan4567">Github</a></li><li><a href="https://www.linkedin.com/in/kevin-robinson-13896011b/">LinkedIn</a></li></ul>'
   },
 
   {
@@ -35,7 +35,7 @@ var articleData = [
 
   {
     name:'fsnstn',
-    category:'rbgelr',
+    category:'home',
     image:'',
     description:'',
     body:''
@@ -43,7 +43,7 @@ var articleData = [
 
   {
     name:'tsjhtrj',
-    category:'trhas',
+    category:'home',
     image:'',
     description:'',
     body:''
@@ -51,7 +51,7 @@ var articleData = [
 
   {
     name:'srjtjtgj',
-    category:'agr',
+    category:'home',
     image:'',
     description:'',
     body:''
