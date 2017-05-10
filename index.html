@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/module.css">
+
+    <script id="article-template" type="text/x-handlebars-template">
+      <article data-name="{{name}}" data-category="{{category}}">
+        <h2>{{name}}</h2>
+        <p class="description">{{description}}</p>
+        <p class="body">{{{body}}}</p>
+        <button class="close lightButton">x</button>
+      </article>
+    </script>
   </head>
   <body>
     <nav id="navMenu" class="hiddenMenu">
@@ -20,12 +29,7 @@
         <button type="button" id="toggleDisplay" class="navButton lightButton"></button>
       </header>
       <div id="articleSpace">
-        <article class="template" data-category="cat">
-          <h2>Title</h2>
-          <p class="description">text</p>
-          <p class="body">text</p>
-          <button class="close lightButton">x</button>
-        </article>
+
       </div>
     </main>
     <div class="items rightMenu">
@@ -39,6 +43,10 @@
       src="https://code.jquery.com/jquery-3.2.1.js"
       integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
       crossorigin="anonymous">
+    </script>
+    <!-- handlebars -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.js">
     </script>
     <script type="text/javascript" src="/js/articles.js"></script>
     <script type="text/javascript" src="/js/project.js"></script>

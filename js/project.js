@@ -1,12 +1,47 @@
 'use strict'
 
+/**
+* Object for the nav bar on the left of the page.
+*/
+var leftNav = {
+  items: [], //array of nav items (strings)
+  display: false, //should be displayed even if screen width is low.
+  element: document.getElementById('navMenu'),
+  // toggles whether the nav element should be displayed in a small-screen view.
+  toggleDisplay: function() {
+    if(this.display === true) {
+      this.element.className = 'hiddenMenu';
+      this.display = false;
+    } else {
+      this.element.className = '';
+      this.display = true;
+    }
+  },
+  addNav: function(name) {
+    if(this.items.indexOf(name) >= 0) return; //prevent duplicates
+    this.items.push(name);
+    element.append('<li>' + name + '</li>');
+  }
+}
+
 var articleList = {
   array: [],
   cats: [],
+  artTemplate: function() {
+    var source = $('#article-template').html();
+    return Handlebars.compile(source);
+  }(),
+
+  //pull articles from articles.js and add buttons to left and right menus
   loadArticles: function() {
     var $articleSpace = $('#articleSpace');
     var $contents = $('#toc');
     var $navItems = $('#navItems');
+
+    $articleSpace.on('click', 'button.close', function(event){
+      console.log(event.target.parentNode);
+      event.target.parentNode.remove();
+    });
 
     //set on-click event for left menu
     $navItems.on('click', 'li', function(event) {
@@ -26,20 +61,21 @@ var articleList = {
     });
     this.array.forEach(function(art) {
       $contents.append('<li><button data-type="itemButton" data-name="' + art.name + '" data-cat="' + art.category + '" class="lightButton">' + art.name + '</button></li>');
-      $articleSpace.append(art.toHtml());
     });
     $('button[data-type="itemButton"]').on('click', function() {
       articleList.addArticle(this.getAttribute("data-name"));
     });
     articleList.changePage('home');
   },
+
+   //Adds an article to the page.
   addArticle: function(name) {
     var $articleSpace = $('#articleSpace');
     var article;
 
     //cancel add if the article is already there
     if($('article[data-name="' + name + '"]').length) {
-      // console.log('attempted to add article ' + name + ' which already existed.');
+      console.log('attempted to add article ' + name + ' which already existed.');
       return;
     }
 
@@ -47,7 +83,14 @@ var articleList = {
     for (var i = 0; i < articleList.array.length; i++) {
       if(articleList.array[i].name === name){
         article = articleList.array[i];
-        $articleSpace.append(article.toHtml());
+        var newArticle = article.toHtml();
+        console.log($(newArticle));
+        $(newArticle).on('click', 'button.close', function() {
+          console.log('close clicked on ' + this);
+          console.log(this.parentNode);
+          // this.parentNode.removeThis();
+        });
+        $articleSpace.append(newArticle);
         break;
       }
     }
@@ -56,6 +99,7 @@ var articleList = {
       return;
     }
   },
+
   //hide navigation items that don't match current pseudo-page
   changePage: function(page) {
     $('#toc button').each(function() {
@@ -85,60 +129,14 @@ function Article(obj) {
   this.displayed = true;
 }
 
-// Article.prototype.display = function(dis) {
-//   //display to the page
-//   this.displayed = dis;
-// };
-
+//returns an html version of this article through Handlebars.
 Article.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
+  var newArticle = articleList.artTemplate(this);
+  console.log(newArticle);
 
-  $newArticle.removeClass('template');
-  $newArticle.attr('data-name', this.name);
-  $newArticle.attr('data-category', this.category);
-  $newArticle.find('h2').html(this.name);
-  $newArticle.find('.description').html(this.description);
-  $newArticle.find('.body').html(this.body);
-  $newArticle.on('click', 'button.close', function() {
-    // console.log('close clicked on ' + this);
-    // console.log(this.parentNode);
-    this.parentNode.remove();
-  });
-
-  // console.log($newArticle);
-  return $newArticle;
+  return newArticle;
 };
 
-/**
- * Removes this article from the page.
- */
-Article.prototype.removeThis = function() {
-  $('article[data-name="' + this.name + '"]').remove();
-};
-
-/**
- * Object for the nav bar on the left of the page.
- */
-var leftNav = {
-  items: [], //array of nav items (strings)
-  display: false, //should be displayed even if screen width is low.
-  element: document.getElementById('navMenu'),
-  // toggles whether the nav element should be displayed in a small-screen view.
-  toggleDisplay: function() {
-    if(this.display === true) {
-      this.element.className = 'hiddenMenu';
-      this.display = false;
-    } else {
-      this.element.className = '';
-      this.display = true;
-    }
-  },
-  addNav: function(name) {
-    if(this.items.indexOf(name) >= 0) return; //prevent duplicates
-    this.items.push(name);
-    element.append('<li>' + name + '</li>');
-  }
-}
 
 document.getElementById('toggleDisplay').addEventListener('click', function() {
   leftNav.toggleDisplay(); //wrapper to fix 'this'
