@@ -57,10 +57,10 @@ var articleList = {
       articleList.array.push(newArt);
     });
     articleList.cats.forEach(function(cat) {
-      $navItems.append('<li data-cat="' + cat + '">' + cat + '</li>');
+      $navItems.append('<a href="#"><li data-cat="' + cat + '">' + cat + '</li></a>');
     });
     this.array.forEach(function(art) {
-      $contents.append('<li><button data-type="itemButton" data-name="' + art.name + '" data-cat="' + art.category + '" class="lightButton">' + art.name + '</button></li>');
+      $contents.append('<li><button data-type="itemButton" data-name="' + art.name + '" data-cat="' + art.category + '" class="lightButton"><a href="#">' + art.name + '</a></button></li>');
     });
     $('button[data-type="itemButton"]').on('click', function() {
       articleList.addArticle(this.getAttribute("data-name"));
@@ -84,7 +84,7 @@ var articleList = {
       if(articleList.array[i].name === name){
         article = articleList.array[i];
         var newArticle = article.toHtml();
-        console.log($(newArticle));
+        // console.log($(newArticle));
         $(newArticle).on('click', 'button.close', function() {
           console.log('close clicked on ' + this);
           console.log(this.parentNode);
@@ -132,7 +132,7 @@ function Article(obj) {
 //returns an html version of this article through Handlebars.
 Article.prototype.toHtml = function() {
   var newArticle = articleList.artTemplate(this);
-  console.log(newArticle);
+  // console.log(newArticle);
 
   return newArticle;
 };
